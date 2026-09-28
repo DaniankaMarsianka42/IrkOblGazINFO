@@ -4,27 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница 5</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page5.css">
 </head>
 <body>
 
     <nav class="navbar">
         <ul class="nav-menu">
-            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li><a href="page2.html">О нас</a></li>
             <li><a href="page3.html">Документация</a></li>
             <li><a href="page4.html">Информация для населения</a></li>
-            <li><a href="page5.html">Вакансии</a></li>
+            <li><a href="page5.html" class="active">Вакансии</a></li>
             <li><a href="https://www.google.com/">Канал в MAX</a></li>
         </ul>
     </nav>
 
     <section class="page">
         <div class="content-box">
-            <span class="page-number-badge">Главная</span>
-            <h1>Добро пожаловать!</h1>
-            <p>Ниего пока что нет<p>
-            <p>Меню сверху = навигация</p>
+            <h1>Вакансии</h1>
+            <p>Выберите интересующий раздел, чтобы раскрыть подробности.</p>
+
+            <div class="accordion">
+                <!-- Блок 1: Открытые вакансии -->
+                <div>
+                    <input type="checkbox" id="acc1">
+                    <label for="acc1" class="accordion-header">
+                        <span>Открытые вакансии</span>
+                        <span class="arrow">▼</span>
+                    </label>
+                    <div class="accordion-content">
+                        <p>Приглашаем на работу:</p>
+                        <ul>
+                            <li><strong>Главного энергетика</strong> — з/п от 66 900 р.</li>
+                            <li><strong>Инженера по охране окружающей среды</strong> — з/п от 37 714 р.</li>
+                            <li><strong>Монтёра по защите подземных трубопроводов от коррозии</strong> — з/п от 37 714 р.</li>
+                            <li><strong>Слесарей по эксплуатации и ремонту газового оборудования (ВКГО)</strong> — з/п от 40 000 р. (сдельная оплата труда)</li>
+                            <li><strong>Слесаря-сантехника 5 разряда</strong> — з/п от 37 714 р.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Блок 2: Условия -->
+                <div>
+                    <input type="checkbox" id="acc2">
+                    <label for="acc2" class="accordion-header">
+                        <span>Условия</span>
+                        <span class="arrow">▼</span>
+                    </label>
+                    <div class="accordion-content">
+                        <dt>Официальное трудоустройство, перспективы профессионального развития и карьерного роста, премии к профессиональному празднику Дню работников нефтяной и газовой промышленности, ежегодная индексация заработной платы, подарки детям сотрудников к Новому году, дружный коллектив, работа в шаговой доступности.</dt>
+                    </div>
+                </div>
+
+                <!-- Блок 3: Связь с нами -->
+                <div>
+                    <input type="checkbox" id="acc3">
+                    <label for="acc3" class="accordion-header">
+                        <span>Связь с нами</span>
+                        <span class="arrow">▼</span>
+                    </label>
+                    <div class="accordion-content">
+                        <dt>Отдел кадров</dt>
+                        <p>
+                            <a href="https://go.2gis.com/j8hrN" target="_blank">
+                                город Ангарск, 277 квартал, строение 16
+                            </a>
+                        </p>
+
+                        <dt>Контакты:</dt>
+                        <dl>
+                            <dt>Телефон</dt>
+                            <dd>8 (3955) 514-904</dd>
+
+                            <dt>Email</dt>
+                            <dd>zharnikova@irkgaz.ru</dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 

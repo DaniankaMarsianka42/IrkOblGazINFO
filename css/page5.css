@@ -1,0 +1,228 @@
+/* ============================================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ «ВАКАНСИИ» (подключается только на page5.html)
+   ============================================================ */
+
+
+/* ============================================================
+   АККОРДЕОН — КОНТЕЙНЕР И ПЕРЕКЛЮЧАТЕЛЬ
+   ============================================================ */
+
+/* Контейнер всех раскрывающихся блоков */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Скрываем стандартный чекбокс, управляющий раскрытием */
+.accordion input[type="checkbox"] {
+    display: none;
+}
+
+
+/* ============================================================
+   ЗАГОЛОВОК БЛОКА (по нему кликаем)
+   ============================================================ */
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 20px 28px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    border-left: 5px solid #1abc9c;
+}
+
+.accordion-header:hover {
+    background-color: #34495e;
+    transform: translateX(4px);
+}
+
+/* Стрелка ▼ */
+.accordion-header .arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    color: #1abc9c;
+}
+
+/* Открытое состояние — стрелка переворачивается */
+.accordion input[type="checkbox"]:checked + .accordion-header .arrow {
+    transform: rotate(180deg);
+}
+
+/* Открытое состояние — заголовок становится бирюзовым */
+.accordion input[type="checkbox"]:checked + .accordion-header {
+    background-color: #1abc9c;
+    border-left-color: #f1c40f;
+}
+
+.accordion input[type="checkbox"]:checked + .accordion-header .arrow {
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   СОДЕРЖИМОЕ БЛОКА (скрыто/раскрывается)
+   ============================================================ */
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #f9fbfd;
+    border-radius: 0 0 12px 12px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 28px;
+    border: 1px solid #e0e6ed;
+    border-top: none;
+}
+
+.accordion input[type="checkbox"]:checked ~ .accordion-content {
+    max-height: 2000px;
+    padding: 24px 28px;
+}
+
+
+/* ============================================================
+   ОФОРМЛЕНИЕ ТЕКСТА ВНУТРИ БЛОКОВ
+   ============================================================ */
+
+.accordion-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+/* Первый абзац — как подзаголовок */
+.accordion-content p:first-child {
+    color: #2c3e50;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1abc9c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.accordion-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Ссылки */
+.accordion-content a {
+    color: #000000;
+    text-decoration: none;           /* убираем стандартную линию */
+    border-bottom: 1px dashed #000000;  /* оставляем только пунктир */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.accordion-content a:hover {
+    color: #333333;
+    border-bottom-style: solid;
+    border-bottom-color: #333333;
+}
+
+/* Жирный текст */
+.accordion-content strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Подзаголовки */
+.accordion-content h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    text-align: left;
+    border-left: 4px solid #1abc9c;
+    padding-left: 12px;
+}
+
+.accordion-content h4 {
+    color: #1abc9c;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 18px 0 8px;
+    text-align: left;
+}
+
+/* Списки */
+.accordion-content ul,
+.accordion-content ol {
+    margin: 8px 0 16px 24px;
+    color: #555;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.accordion-content li {
+    margin-bottom: 8px;
+}
+
+/* Список определений */
+.accordion-content dl {
+    margin: 8px 0 16px;
+    text-align: left;
+}
+
+.accordion-content dt {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+.accordion-content dd {
+    margin-left: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Встроенная карта */
+.accordion-content iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: 12px;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Разделительная линия */
+.accordion-content hr {
+    border: none;
+    border-top: 1px solid #e0e6ed;
+    margin: 20px 0;
+}
+
+
+/* ============================================================
+   АДАПТИВНОСТЬ ДЛЯ АККОРДЕОНА
+   ============================================================ */
+
+@media (max-width: 650px) {
+    .accordion-header {
+        font-size: 1rem;
+        padding: 16px 20px;
+    }
+
+    .accordion-content {
+        padding: 0 20px;
+    }
+
+    .accordion input[type="checkbox"]:checked ~ .accordion-content {
+        padding: 20px;
+    }
+}

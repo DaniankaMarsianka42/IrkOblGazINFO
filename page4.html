@@ -1,30 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница 4</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Информация для населения</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page4.css">
 </head>
 <body>
 
     <nav class="navbar">
         <ul class="nav-menu">
-            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li><a href="page2.html">О нас</a></li>
             <li><a href="page3.html">Документация</a></li>
-            <li><a href="page4.html">Информация для населения</a></li>
+            <li><a href="page4.html" class="active">Информация для населения</a></li>
             <li><a href="page5.html">Вакансии</a></li>
-            <li><a href="https://www.google.com/">Канал в MAX</a></li>
+            <li><a href="https://www.google.com/" target="_blank">Канал в MAX</a></li>
         </ul>
     </nav>
 
     <section class="page">
         <div class="content-box">
-            <span class="page-number-badge">Главная</span>
-            <h1>Добро пожаловать!</h1>
-            <p>Ниего пока что нет<p>
-            <p>Меню сверху = навигация</p>
+            <h1>Для населения</h1>
+            <p>Выберите интересующий раздел, чтобы раскрыть подробности.</p>
+            <p>Важно! Обновлённая информация и изменения внесённые с 01.01.2026</p>
+
+            <div class="accordion">
+
+                <!-- Блок 1: Для населения -->
+                <div>
+                    <input type="checkbox" id="acc1">
+                    <label for="acc1" class="accordion-header">
+                        <span>Для населения</span>
+                        <span class="arrow">▼</span>
+                    </label>
+                    <div class="accordion-content">
+                        <dt><a href="contratcs/Договор-на-поставку-газа-Иркутскоблгаз.pdf" target="_blank">
+                                Договор на поставку газа для населения
+                            </a></dt>
+                    </div>
+                </div>
+
+                <!-- Блок 2: Приказы -->
+                <div>
+                    <input type="checkbox" id="acc2">
+                    <label for="acc2" class="accordion-header">
+                        <span>Приказы</span>
+                        <span class="arrow">▼</span>
+                    </label>
+                    <div class="accordion-content">
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
