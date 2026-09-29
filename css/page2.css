@@ -1,0 +1,123 @@
+/* ============================================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ «О НАС» (page2.html)
+   ============================================================ */
+
+
+/* ============================================================
+   БЛОК С ФОТО И ПОДПИСЬЮ СПРАВА
+   ============================================================ */
+h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    text-align: left;
+    border-left: 4px solid #1abc9c;
+    padding-left: 12px;
+}
+
+.about-block {
+    display: flex;
+    align-items: center;       /* ← вот это выравнивает по центру по вертикали */
+    align-items: flex-start;   /* выравниваем по верху */
+    gap: 30px;                 /* отступ между фото и текстом */
+    margin-top: 30px;
+    text-align: left;          /* текст слева, а не по центру */
+}
+
+/* Левая колонка — фотография */
+.about-photo {
+    flex: 0 0 30%;             /* ровно половина ширины */
+    max-width: 30%;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Правая колонка — подпись рядом с фото */
+.about-text {
+    flex: 1;                   /* занимает всё оставшееся место */
+    padding-top: 10px;         /* лёгкий отступ сверху для красоты */
+}
+
+.about-text h2 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+
+/* ============================================================
+   ОБЩАЯ ПОДПИСЬ СНИЗУ ПОД БЛОКОМ
+   ============================================================ */
+
+.about-caption {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e6ed;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+    font-style: italic;
+}
+
+.full-photo {
+    margin: 40px auto 0;
+    max-width: 100%;
+    text-align: center;
+}
+
+.full-photo img {
+    display: block;
+    width: 100%;               /* на всю ширину карточки */
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    cursor: zoom-in;           /* курсор-лупа при наведении */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.full-photo img:hover {
+    transform: scale(1.02);    /* лёгкое увеличение при наведении */
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ============================================================
+   АДАПТИВНОСТЬ — на телефонах фото и текст в одну колонку
+   ============================================================ */
+
+@media (max-width: 750px) {
+    .about-block {
+        flex-direction: column;   /* фото сверху, текст под ним */
+        gap: 20px;
+    }
+
+    .about-photo {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 1.3rem;
+    }
+}
