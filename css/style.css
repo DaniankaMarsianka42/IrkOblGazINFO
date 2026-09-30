@@ -134,16 +134,16 @@ body {
    ============================================================ */
 
 @media (max-width: 650px) {
+    .navbar {
+        position: static;              /* ← отключаем sticky */
+    }
+
     .nav-menu a {
-        padding: 12px 16px;
-        font-size: 0.95rem;
+        padding: 12px 14px;
+        font-size: 0.9rem;
     }
 
     .content-box {
-        padding: 30px 20px;
-    }
-
-    .content-box h1 {
-        font-size: 2rem;
+        padding: 25px 15px;
     }
 }
