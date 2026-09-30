@@ -1,0 +1,379 @@
+/* ============================================================
+   СТИЛИ ДЛЯ СТРАНИЦ card1.html – card4.html
+   ============================================================ */
+
+
+/* ============================================================
+   ЗАГОЛОВОК СТРАНИЦЫ
+   ============================================================ */
+
+.card-page-title {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #1abc9c;
+    text-align: center;
+}
+
+
+/* ============================================================
+   ОСНОВНОЙ ТЕКСТ — ДВА АБЗАЦА
+   ============================================================ */
+
+.card-text {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Первый абзац — крупнее и темнее */
+.card-text p:first-of-type {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+/* Второй абзац — обычный */
+.card-text p:last-of-type {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   РАЗДЕЛИТЕЛЬ МЕЖДУ ТЕКСТОМ И НИЖНИМ БЛОКОМ
+   ============================================================ */
+
+.card-divider {
+    margin: 40px auto 30px;
+    max-width: 800px;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        #1abc9c 50%,
+        transparent 100%
+    );
+    border: none;
+    border-radius: 2px;
+}
+
+
+/* ============================================================
+   НИЖНИЙ БЛОК: АДРЕС, КОНТАКТЫ, РЕЖИМ РАБОТЫ
+   ============================================================ */
+
+.card-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* три равные колонки */
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Одна колонка нижнего блока */
+.info-col {
+    background: #f9fbfd;
+    padding: 24px 22px;
+    border-radius: 12px;
+    border-top: 4px solid #1abc9c;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-col:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.15);
+}
+
+/* Заголовок колонки */
+.info-col h3 {
+    color: #2c3e50;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #d0d9e0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Текст внутри колонки */
+.info-col p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+.info-col p:last-child {
+    margin-bottom: 0;
+}
+
+/* Жирный текст внутри колонки */
+.info-col strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Ссылки (телефоны и email) */
+.info-col a {
+    color: #1abc9c;
+    text-decoration: none;
+    border-bottom: 1px dashed #1abc9c;
+    transition: all 0.2s ease;
+}
+
+.info-col a:hover {
+    color: #16a085;
+    border-bottom-style: solid;
+}
+
+/* ============================================================
+   БЛОК «АДРЕС И КОНТАКТЫ»
+   ============================================================ */
+
+.contacts-section {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+
+/* ------------------------------------------------------------
+   ЗАГОЛОВОК «Адрес и контакты»
+   ------------------------------------------------------------ */
+
+.contacts-heading {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+
+/* ------------------------------------------------------------
+   ОБЁРТКА: карта слева, контакты справа
+   ------------------------------------------------------------ */
+
+.contacts-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* две равные колонки */
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* ------------------------------------------------------------
+   ЛЕВАЯ КОЛОНКА: карта
+   ------------------------------------------------------------ */
+
+.contacts-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    line-height: 0;                   /* убираем «лишний» отступ под картинкой */
+}
+
+.contacts-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.contacts-map:hover img {
+    transform: scale(1.03);           /* лёгкое увеличение при наведении */
+}
+
+
+/* ------------------------------------------------------------
+   ПРАВАЯ КОЛОНКА: контакты
+   ------------------------------------------------------------ */
+
+.contacts-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+/* Адрес — крупная синяя ссылка */
+.contacts-address {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.contacts-address a {
+    color: #1a73e8;                    /* синий как у ссылок на картах */
+    text-decoration: none;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contacts-address a:hover {
+    color: #0c4fbb;
+    border-bottom-color: #0c4fbb;
+}
+
+
+/* Подписи перед телефонами */
+.contacts-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 18px 0 8px 0;
+    line-height: 1.4;
+}
+
+
+/* Голубые плашки с телефонами */
+.contacts-phone {
+    display: block;
+    background: #0d8ed6;               /* насыщенный голубой */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 4px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contacts-phone:hover {
+    background: #0a7bb8;
+    transform: translateY(-1px);
+}
+
+
+/* Красные плашки (аварийные службы) */
+.contacts-phone--danger {
+    background: #c62828;
+}
+
+.contacts-phone--danger:hover {
+    background: #a51f1f;
+}
+
+
+/* ------------------------------------------------------------
+   РЕЖИМ РАБОТЫ (снизу, с чёрной полоской слева)
+   ------------------------------------------------------------ */
+
+.contacts-schedule {
+    margin-top: 40px;
+    padding: 20px 24px;
+    border-left: 6px solid #000000;   /* чёрная полоска */
+    background: #f9fbfd;
+}
+
+.contacts-schedule h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contacts-schedule p {
+    color: #2c3e50;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+
+/* Планшет / телефон: карта и контакты в одну колонку */
+@media (max-width: 850px) {
+    .contacts-wrap {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .contacts-heading {
+        font-size: 1.5rem;
+        margin-bottom: 22px;
+    }
+
+    .contacts-address {
+        font-size: 1.15rem;
+    }
+
+    .contacts-label {
+        font-size: 1rem;
+    }
+
+    .contacts-phone {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+
+    .contacts-schedule {
+        padding: 16px 18px;
+    }
+
+    .contacts-schedule h3 {
+        font-size: 1.1rem;
+    }
+
+    .contacts-schedule p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+
+/* Планшет: две колонки */
+@media (max-width: 850px) {
+    .card-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Телефон: одна колонка */
+@media (max-width: 600px) {
+    .card-page-title {
+        font-size: 1.6rem;
+        margin-bottom: 22px;
+        padding-bottom: 14px;
+    }
+
+    .card-text p:first-of-type {
+        font-size: 1.05rem;
+    }
+
+    .card-text p:last-of-type {
+        font-size: 0.95rem;
+    }
+
+    .card-info {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .info-col {
+        padding: 20px 18px;
+    }
+}
