@@ -196,36 +196,30 @@ body::before {
 }
 
 /* ============================================================
-   АДАПТИВНОСТЬ ФОНА ПОД МОБИЛЬНЫЕ УСТРОЙСТВА
+   МОБИЛЬНАЯ ВЕРСИЯ: БЕЛЫЙ ФОН БЕЗ КАРТИНКИ
    ============================================================ */
 
-/* Планшеты и телефоны — фон прокручивается, а не зафиксирован */
-@media (max-width: 1024px) {
-    body {
-        background-attachment: scroll;     /* на iOS fixed работает плохо */
-        background-position: center top;   /* показываем верхнюю часть картинки */
-    }
-}
-
-/* Телефоны — уменьшаем затемнение, чтобы фон был виднее */
 @media (max-width: 750px) {
+
+    /* Убираем фоновую картинку и градиент */
+    body {
+        background-image: none;         /* отключаем картинку */
+        background-color: #ffffff;      /* чистый белый фон */
+        background-attachment: scroll;  /* на всякий случай — без fixed */
+        animation: none;                /* отключаем анимацию появления */
+    }
+
+    /* Убираем затемняющий градиент поверх фона */
     body::before {
-        background: linear-gradient(
-            180deg,
-            rgba(30, 58, 138, 0.10) 0%,
-            rgba(0, 0, 0, 0.20) 100%
-        );
+        display: none;
     }
 
-    body {
-        background-position: center top;
-    }
-}
-
-/* Очень узкие экраны — избегаем «сплющивания» картинки */
-@media (max-width: 500px) {
-    body {
-        background-size: auto 100%;         /* картинка масштабируется по высоте */
-        background-position: center top;
+    /* Карточка становится полностью непрозрачной белой */
+    .content-box {
+        background: #ffffff;            /* без прозрачности */
+        backdrop-filter: none;          /* убираем размытие — на телефоне не нужно */
+        -webkit-backdrop-filter: none;
+        box-shadow: none;               /* тень не нужна на белом фоне */
+        border-radius: 0;               /* убираем скругления — карточка сливается с фоном */
     }
 }
