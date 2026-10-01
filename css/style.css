@@ -223,6 +223,10 @@ body::before {
     .content-box {
         padding: 25px 15px;
     }
+
+        .nav-logo {
+        display: none;
+    }
 }
 
 /* ============================================================
@@ -251,5 +255,9 @@ body::before {
         -webkit-backdrop-filter: none;
         box-shadow: none;               /* тень не нужна на белом фоне */
         border-radius: 0;               /* убираем скругления — карточка сливается с фоном */
+    }
+
+        .nav-logo {
+        display: none;
     }
 }
