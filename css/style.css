@@ -20,6 +20,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+     /* Фоновая картинка */
+    background-image: url("../images/Baikal2.avif");
+    background-size: cover;              /* растягиваем на весь экран */
+    background-position: center center;  /* центрируем */
+    background-repeat: no-repeat;        /* не повторяем */
+    background-attachment: fixed;        /* фон «прибит» к экрану при прокрутке */
+    background-color: #f4f7fc;           /* запасной цвет, если картинка не загрузится */
 }
 
 
@@ -28,7 +36,7 @@ body {
    ============================================================ */
 
 .navbar {
-    background-color: #2c3e50;
+    background-color: #1e3a8a;
     padding: 0 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -50,7 +58,7 @@ body {
 
 .nav-menu a {
     display: block;
-    color: #ecf0f1;
+    color: #ffffff;
     text-decoration: none;
     padding: 18px 28px;
     font-size: 1.1rem;
@@ -84,10 +92,15 @@ body {
 .content-box {
     max-width: 900px;
     margin: 0 auto;
-    background: white;
+    
+    /* Полупрозрачный белый фон */
+    background: rgba(255, 255, 255, 0.8);      /* 88% непрозрачности */
+    backdrop-filter: blur(6px);                 /* размытие фона за карточкой */
+    -webkit-backdrop-filter: blur(6px);         /* для Safari */
+    
     padding: 50px 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* тень чуть сильнее, чем была */
     text-align: center;
 }
 
