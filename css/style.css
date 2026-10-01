@@ -77,14 +77,44 @@ body::before {
     position: sticky;
     top: 0;
     z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* меню слева, логотип справа */
+    gap: 20px;
+    min-height: 60px;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    justify-content: center;
+    justify-content: flex-start;      /* ← пункты меню прижаты влево */
     gap: 5px;
     flex-wrap: wrap;
+    flex: 1;                          /* занимает всё свободное место */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;                   /* логотип не сжимается */
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.nav-logo:hover {
+    opacity: 0.85;
+}
+
+.nav-logo img {
+    display: block;
+    height: 42px;                     /* подберите под свой логотип */
+    width: auto;
+    max-height: 42px;
+    max-width: 180px;                 /* ограничение по ширине */
+    object-fit: contain;
 }
 
 .nav-menu li {
