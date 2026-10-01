@@ -106,9 +106,31 @@ h3 {
    ============================================================ */
 
 @media (max-width: 750px) {
+
+    /* Отступы внутри карточки — меньше, чтобы контент не выходил за экран */
+    .page .content-box {
+        padding: 25px 18px;
+    }
+
+    /* Главный заголовок H1 — уменьшаем и разрешаем перенос */
+    .content-box h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Вводный текст страницы */
+    .content-box > p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Блок фото + текст — в столбик */
     .about-block {
-        flex-direction: column;   /* фото сверху, текст под ним */
+        flex-direction: column;
         gap: 20px;
+        margin-top: 22px;
     }
 
     .about-photo {
@@ -117,7 +139,56 @@ h3 {
         width: 100%;
     }
 
+    .about-text {
+        padding-top: 0;
+    }
+
     .about-text h2 {
         font-size: 1.3rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin: 20px 0 10px;
+        padding-left: 10px;
+    }
+
+    .about-caption {
+        font-size: 0.95rem;
+        margin-top: 22px;
+        padding-top: 16px;
+    }
+
+    .full-photo {
+        margin-top: 30px;
+    }
+
+    .full-photo img {
+        border-radius: 12px;
+    }
+}
+
+
+/* Очень узкие экраны (до 400px) */
+@media (max-width: 400px) {
+
+    .page .content-box {
+        padding: 20px 14px;
+    }
+
+    .content-box h1 {
+        font-size: 1.45rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.15rem;
+    }
+
+    h3 {
+        font-size: 1rem;
     }
 }

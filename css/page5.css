@@ -236,3 +236,100 @@
         padding: 20px;
     }
 }
+
+@media (max-width: 750px) {
+
+    /* Отступы внутри белой карточки — меньше, чтобы контент не выходил за экран */
+    .page .content-box {
+        padding: 25px 18px;
+    }
+
+    /* Главный заголовок H1 («Вакансии») — уменьшаем и разрешаем перенос */
+    .content-box h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        margin-bottom: 14px;
+    }
+
+    /* Вводный текст страницы */
+    .content-box > p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Заголовки внутри аккордеона — тоже переносим */
+    .accordion-content h3 {
+        font-size: 1.1rem;
+        margin: 18px 0 10px;
+        padding-left: 10px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .accordion-content h4 {
+        font-size: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Первый абзац (подзаголовок) — уменьшаем */
+    .accordion-content p:first-child {
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Обычные абзацы внутри аккордеона */
+    .accordion-content p {
+        font-size: 0.95rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Списки внутри аккордеона */
+    .accordion-content ul,
+    .accordion-content ol {
+        margin-left: 18px;
+        padding-left: 0;
+        word-wrap: break-word;
+    }
+
+    /* Ссылки — переносим длинные email и адреса */
+    .accordion-content a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* Очень узкие экраны (до 400px) */
+@media (max-width: 400px) {
+
+    .page .content-box {
+        padding: 20px 14px;
+    }
+
+    .content-box h1 {
+        font-size: 1.45rem;
+    }
+
+    .accordion-header {
+        font-size: 0.95rem;
+        padding: 14px 16px;
+    }
+
+    .accordion input[type="checkbox"]:checked ~ .accordion-content {
+        padding: 16px;
+    }
+
+    .accordion-content h3 {
+        font-size: 1rem;
+    }
+
+    .accordion-content p:first-child {
+        font-size: 0.95rem;
+    }
+}
