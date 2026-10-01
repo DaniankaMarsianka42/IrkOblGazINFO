@@ -56,7 +56,7 @@
 /* Наведение */
 .docs-list a:hover {
     background-color: #eafaf7;
-    border-left-color: #f1c40f;
+    border-left-color: #ffffff;
     transform: translateX(6px);
     box-shadow: 0 6px 16px rgba(26, 188, 156, 0.15);
     color: #000000;
@@ -149,7 +149,7 @@
     margin-top: 50px;
     padding: 30px 35px;
     background: #f9fbfd;
-    border-left: 6px solid #1abc9c;
+    border-left: 6px solid #3b82f6;
     border-radius: 12px;
     text-align: left;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
@@ -162,7 +162,7 @@
     font-weight: 700;
     margin: 0 0 18px 0;
     padding-bottom: 12px;
-    border-bottom: 2px solid #1abc9c;
+    border-bottom: 2px solid #3b82f6;
 }
 
 /* Вводный абзац — чуть крупнее остальных */

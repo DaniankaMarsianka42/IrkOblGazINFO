@@ -13,7 +13,7 @@
     font-weight: 700;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 3px solid #1abc9c;
+    border-bottom: 3px solid #3b82f6;
     text-align: center;
 }
 
@@ -57,7 +57,7 @@
     background: linear-gradient(
         to right,
         transparent 0%,
-        #1abc9c 50%,
+        #3b82f6 50%,
         transparent 100%
     );
     border: none;

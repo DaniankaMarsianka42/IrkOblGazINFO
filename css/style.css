@@ -13,21 +13,56 @@
     box-sizing: border-box;
 }
 
+/* ============================================================
+   БАЗОВЫЕ НАСТРОЙКИ + КРАСИВЫЙ АДАПТИВНЫЙ ФОН
+   ============================================================ */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fc;
     color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 
-     /* Фоновая картинка */
+    /* --- Фоновая картинка --- */
     background-image: url("../images/Baikal2.avif");
-    background-size: cover;              /* растягиваем на весь экран */
-    background-position: center center;  /* центрируем */
-    background-repeat: no-repeat;        /* не повторяем */
-    background-attachment: fixed;        /* фон «прибит» к экрану при прокрутке */
-    background-color: #f4f7fc;           /* запасной цвет, если картинка не загрузится */
+    background-size: cover;                /* заполняет весь экран */
+    background-position: center center;    /* центрирование */
+    background-repeat: no-repeat;          /* без повторов */
+    background-attachment: fixed;          /* фон зафиксирован при прокрутке */
+    background-color: #e8eef7;             /* запасной цвет, пока грузится картинка */
+
+    /* --- Плавное появление фона --- */
+    animation: bgFadeIn 0.8s ease-out;
+
+    /* --- Читаемость текста на любом фоне --- */
+    position: relative;
+}
+
+/* Лёгкое затемнение поверх фона (улучшает читаемость карточек) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 58, 138, 0.15) 0%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    z-index: -1;
+    pointer-events: none;      /* не мешает кликам */
+}
+
+/* Плавное появление фона */
+@keyframes bgFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 
@@ -74,8 +109,8 @@ body {
 }
 
 .nav-menu a.active {
-    background-color: #1abc9c;
-    border-bottom-color: #f1c40f;
+    background-color: #3b82f6;
+    border-bottom-color: #000000;
     color: #ffffff;
 }
 
@@ -120,7 +155,7 @@ body {
 
 .page-number-badge {
     display: inline-block;
-    background: #1abc9c;
+    background: #3b82f6;
     color: white;
     font-size: 1rem;
     font-weight: 600;
@@ -140,7 +175,6 @@ body {
         transform: translateY(0);
     }
 }
-
 
 /* ============================================================
    АДАПТИВНОСТЬ
