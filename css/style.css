@@ -194,3 +194,38 @@ body::before {
         padding: 25px 15px;
     }
 }
+
+/* ============================================================
+   АДАПТИВНОСТЬ ФОНА ПОД МОБИЛЬНЫЕ УСТРОЙСТВА
+   ============================================================ */
+
+/* Планшеты и телефоны — фон прокручивается, а не зафиксирован */
+@media (max-width: 1024px) {
+    body {
+        background-attachment: scroll;     /* на iOS fixed работает плохо */
+        background-position: center top;   /* показываем верхнюю часть картинки */
+    }
+}
+
+/* Телефоны — уменьшаем затемнение, чтобы фон был виднее */
+@media (max-width: 750px) {
+    body::before {
+        background: linear-gradient(
+            180deg,
+            rgba(30, 58, 138, 0.10) 0%,
+            rgba(0, 0, 0, 0.20) 100%
+        );
+    }
+
+    body {
+        background-position: center top;
+    }
+}
+
+/* Очень узкие экраны — избегаем «сплющивания» картинки */
+@media (max-width: 500px) {
+    body {
+        background-size: auto 100%;         /* картинка масштабируется по высоте */
+        background-position: center top;
+    }
+}
